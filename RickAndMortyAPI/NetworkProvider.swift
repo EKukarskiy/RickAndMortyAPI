@@ -1,5 +1,5 @@
 //
-//  NetworkAndViewModel.swift
+//  NetworkProvider.swift
 //  RickAndMortyAPI
 //
 //  Created by Evgeniy K on 20.03.2024.
@@ -8,22 +8,8 @@
 import Foundation
 import SwiftUI
 
-// MARK: - View Model
-final class ModelData: ObservableObject {
-    @Published var characters: [Character] = []
-
-    private let store = NetworkProvider()
-    @MainActor func fetchAllCaracters() async {
-        do {
-            characters = try await store.getCharacter()
-        } catch {
-            print("Catch: \(error)")
-        }
-    }
-}
-
 // MARK: - Network layer
-private actor NetworkProvider {
+actor NetworkProvider {
     func getCharacter() async throws -> [Character] {
         var characters = [Character]()
 

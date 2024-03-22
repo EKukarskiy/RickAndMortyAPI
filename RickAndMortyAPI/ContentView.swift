@@ -11,7 +11,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @StateObject var contentViewModel = ModelData()
+    @StateObject var contentViewModel = ViewModel()
 
     var body: some View {
         NavigationStack {
