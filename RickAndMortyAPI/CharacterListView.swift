@@ -11,9 +11,9 @@ import SwiftUI
 
 struct CharacterListView: View {
     let character: Character
-
+    
     var body: some View {
-
+        
         HStack(spacing: 20) {
             AsyncImage(url: URL(string: character.image)) { image in
                 image
@@ -22,13 +22,13 @@ struct CharacterListView: View {
                     .clipShape(Circle())
                     .frame(width: 50, height: 50)
             }
-
+            
             VStack(alignment: .leading) {
                 Text(character.name)
                     .font(.body)
                     .fontWeight(.semibold)
-
-                Text(character.species)
+                
+                Text(character.gender)
                     .font(.callout)
                     .foregroundStyle(.secondary)
                     .fontWeight(.medium)

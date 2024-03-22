@@ -14,6 +14,16 @@ struct Character: Identifiable, Decodable, Hashable {
     let status: String
     let species: String
     let gender: String
+
+    struct Origin: Decodable, Hashable {
+        let name: String
+    }
+    let origin: Origin
+
+    struct Location: Decodable, Hashable {
+        let name: String
+    }
+    let location: Location
     let image: String
 }
 
@@ -24,5 +34,5 @@ struct Query: Decodable {
 
 // MARK: - Preview data
 struct TestData {
-    static let character = Character(id: 001, name: "John Weak", status: "Alive", species: "Human", gender: "Male", image: "https://rickandmortyapi.com/api/character/avatar/16.jpeg")
+    static let character = Character(id: 001, name: "John Weak", status: "Alive", species: "Human", gender: "Male", origin: Character.Origin.init(name: "Earth"), location: Character.Location(name: "Citadel of Ricks"), image: "https://rickandmortyapi.com/api/character/avatar/16.jpeg")
 }

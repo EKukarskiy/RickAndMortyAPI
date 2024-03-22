@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: - Main screen view
+
 struct ContentView: View {
 
     @StateObject var network = Network()
