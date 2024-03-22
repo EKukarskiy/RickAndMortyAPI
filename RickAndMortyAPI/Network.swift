@@ -8,15 +8,12 @@
 import Foundation
 import SwiftUI
 
-class Network: ObservableObject {
-
-    @Published var characters = [Character]()
-
+// MARK: - Network function
+private actor Store {
     func getCharacter() async throws -> [Character] {
         var characters = [Character]()
 
         guard let url = URL(string: "https://rickandmortyapi.com/api/character") else { fatalError("Missing URL") }
-
         let urlRequest = URLRequest(url: url)
 
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
@@ -26,7 +23,21 @@ class Network: ObservableObject {
 
         characters = decodedCharacter.results
         print(characters)
-
         return characters
+    }
+}
+
+// MARK: - View Model
+final class Network: ObservableObject {
+    @Published var characters: [Character] = []
+    @Published var selectedCharacter: Character?
+
+    private let store = Store()
+    @MainActor func fetchAllCaracters() async {
+        do {
+            characters = try await store.getCharacter()
+        } catch {
+            print("Catch: \(error)")
+        }
     }
 }

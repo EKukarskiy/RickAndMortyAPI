@@ -7,18 +7,22 @@
 
 import Foundation
 
-// First screen - list with name, pic, gender
-// Second screen - detailed info about character
-
-// MARK: JSON Model
-
+// MARK: - JSON Model
 struct Character: Identifiable, Decodable, Hashable {
     let id: Int
     let name: String
+    let status: String
+    let species: String
     let gender: String
-    let image: URL
+    let image: String
 }
 
+// MARK: - JSON Query
 struct Query: Decodable {
     let results: [Character]
+}
+
+// MARK: - Preview data
+struct TestData {
+    static let character = Character(id: 001, name: "John Weak", status: "Alive", species: "Human", gender: "Male", image: "https://rickandmortyapi.com/api/character/avatar/16.jpeg")
 }
