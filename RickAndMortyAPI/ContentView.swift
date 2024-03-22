@@ -11,12 +11,12 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @StateObject var network = Network()
+    @StateObject var contentViewModel = ModelData()
 
     var body: some View {
         NavigationStack {
 
-            List(network.characters, id: \.id) { character in
+            List(contentViewModel.characters, id: \.id) { character in
                 NavigationLink(destination: CharacterView(character: character)) {
                     CharacterListView(character: character)
                 }
@@ -24,7 +24,7 @@ struct ContentView: View {
             .listStyle(.plain)
             .padding()
             .task {
-                await network.fetchAllCaracters()
+                await contentViewModel.fetchAllCaracters()
             }
             .navigationTitle("Rick and Morty")
         }

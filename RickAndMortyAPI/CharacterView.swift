@@ -10,8 +10,12 @@ import SwiftUI
 // MARK: - Detailed view of the character
 
 struct CharacterView: View {
-
     let character: Character
+
+    enum Constants {
+        static let imageWidth: CGFloat = 240
+        static let imaheHeight: CGFloat = 240
+    }
 
     var body: some View {
 
@@ -20,7 +24,7 @@ struct CharacterView: View {
                 .image?.resizable()
                 .aspectRatio(contentMode: .fill)
                 .clipShape(Circle())
-                .frame(width: 240, height: 240)
+                .frame(width: Constants.imageWidth, height: Constants.imaheHeight)
                 .overlay {
                     Circle().stroke(.white, lineWidth: 2)
                 }
@@ -46,7 +50,7 @@ struct CharacterView: View {
 }
 
 #Preview {
-    CharacterView(character: TestData.character)
+    CharacterView(character: Character.testCharacter())
 }
 
 // MARK: - View with character information to avoid code repetition. Just call it.
@@ -61,7 +65,7 @@ struct CharacterInfo: View {
                 Label(title, systemImage: imageName)
                     .foregroundStyle(.secondary)
                     .font(.headline)
-                Text("\(info)")
+                Text(info)
                     .font(.body)
             }
             .fontWeight(.semibold)

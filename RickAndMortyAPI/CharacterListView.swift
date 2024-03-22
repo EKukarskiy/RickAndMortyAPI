@@ -11,7 +11,12 @@ import SwiftUI
 
 struct CharacterListView: View {
     let character: Character
-    
+
+    enum Constants {
+        static let circleWidth: CGFloat = 50
+        static let circleHeight: CGFloat = 50
+    }
+
     var body: some View {
         
         HStack(spacing: 20) {
@@ -20,7 +25,7 @@ struct CharacterListView: View {
                     .image?.resizable()
                     .aspectRatio(contentMode: .fit)
                     .clipShape(Circle())
-                    .frame(width: 50, height: 50)
+                    .frame(width: Constants.circleWidth, height: Constants.circleHeight)
             }
             
             VStack(alignment: .leading) {
@@ -48,5 +53,5 @@ struct CharacterListView: View {
 }
 
 #Preview {
-    CharacterListView(character: TestData.character)
+    CharacterListView(character: Character.testCharacter())
 }

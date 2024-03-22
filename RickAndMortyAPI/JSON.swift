@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  JSON.swift
 //  RickAndMortyAPI
 //
 //  Created by Evgeniy K on 21.03.2024.
@@ -33,6 +33,15 @@ struct Query: Decodable {
 }
 
 // MARK: - Preview data
-struct TestData {
-    static let character = Character(id: 001, name: "John Weak", status: "Alive", species: "Human", gender: "Male", origin: Character.Origin.init(name: "Earth"), location: Character.Location(name: "Citadel of Ricks"), image: "https://rickandmortyapi.com/api/character/avatar/16.jpeg")
+extension Character {
+    static func testCharacter() -> Character {
+        let character = Character(id: 001, name: "John Weak",
+                                  status: "Alive",
+                                  species: "Human",
+                                  gender: "Male",
+                                  origin: Character.Origin.init(name: "Earth"),
+                                  location: Character.Location(name: "Citadel of Ricks"),
+                                  image: "https://rickandmortyapi.com/api/character/avatar/16.jpeg")
+        return character
+    }
 }
