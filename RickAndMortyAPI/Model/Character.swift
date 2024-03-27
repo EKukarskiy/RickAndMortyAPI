@@ -1,5 +1,5 @@
 //
-//  JSON.swift
+//  Character.swift
 //  RickAndMortyAPI
 //
 //  Created by Evgeniy K on 21.03.2024.
@@ -14,12 +14,12 @@ struct Character: Identifiable, Decodable, Hashable {
     let status: String
     let species: String
     let gender: String
-
+    
     struct Origin: Decodable, Hashable {
         let name: String
     }
     let origin: Origin
-
+    
     struct Location: Decodable, Hashable {
         let name: String
     }
