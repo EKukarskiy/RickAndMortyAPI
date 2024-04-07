@@ -15,6 +15,7 @@
 		7A4C5E822BAAFB9700E35AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A4C5E812BAAFB9700E35AFF /* Assets.xcassets */; };
 		7A4C5E852BAAFB9700E35AFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A4C5E842BAAFB9700E35AFF /* Preview Assets.xcassets */; };
 		7A4C5E8C2BAAFBC400E35AFF /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4C5E8B2BAAFBC400E35AFF /* NetworkProvider.swift */; };
+		7A95242E2BC2BB7E008247C6 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 7A95242D2BC2BB7E008247C6 /* Readme.md */; };
 		7AA69D062BABEA4600DBA0AF /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA69D052BABEA4600DBA0AF /* Character.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		7A4C5E812BAAFB9700E35AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A4C5E842BAAFB9700E35AFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7A4C5E8B2BAAFBC400E35AFF /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		7A95242D2BC2BB7E008247C6 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		7AA69D052BABEA4600DBA0AF /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +56,7 @@
 		7A4C5E712BAAFB9600E35AFF = {
 			isa = PBXGroup;
 			children = (
+				7A95242D2BC2BB7E008247C6 /* Readme.md */,
 				7A4C5E7C2BAAFB9600E35AFF /* RickAndMortyAPI */,
 				7A4C5E7B2BAAFB9600E35AFF /* Products */,
 			);
@@ -174,6 +177,7 @@
 			files = (
 				7A4C5E852BAAFB9700E35AFF /* Preview Assets.xcassets in Resources */,
 				7A4C5E822BAAFB9700E35AFF /* Assets.xcassets in Resources */,
+				7A95242E2BC2BB7E008247C6 /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

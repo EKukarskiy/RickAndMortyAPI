@@ -11,15 +11,19 @@ import SwiftUI
 extension ContentView {
     struct CellView: View {
         let character: Character
-        
+
         enum Constants {
             static let circleWidth: CGFloat = 50
             static let circleHeight: CGFloat = 50
+            static let radius: CGFloat = 20
+            static let opacity: Double = 0.9
+            static let horizontalSpacing: CGFloat = 20
+            static let horizontalPadding: CGFloat = 7
         }
-        
+
         var body: some View {
-            
-            HStack(spacing: 20) {
+
+            HStack(spacing: Constants.horizontalSpacing) {
                 AsyncImage(url: URL(string: character.image)) { image in
                     image
                         .resizable()
@@ -29,28 +33,28 @@ extension ContentView {
                 }
                 .clipShape(Circle())
                 .frame(width: Constants.circleWidth, height: Constants.circleHeight)
-                
+
                 VStack(alignment: .leading) {
                     Text(character.name)
                         .font(.body)
                         .fontWeight(.semibold)
-                    
+
                     Text(character.gender)
                         .font(.callout)
                         .foregroundStyle(.secondary)
                         .fontWeight(.medium)
                 }
-                
+
                 Spacer()
             }
-            .padding(7)
-            .background(.black).opacity(0.9)
+            .padding(Constants.horizontalPadding)
+            .background(.black).opacity(Constants.opacity)
             .foregroundStyle(.white)
-            .clipShape(.rect(cornerRadius: 20))
+            .clipShape(.rect(cornerRadius: Constants.radius))
             .overlay(
-                RoundedRectangle(cornerRadius: 20)
+                RoundedRectangle(cornerRadius: Constants.radius)
                     .stroke()
-                    .fill(.white.opacity(0.7))
+                    .fill(.white.opacity(Constants.opacity))
             )
         }
     }

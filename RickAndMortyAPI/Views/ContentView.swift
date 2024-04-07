@@ -21,7 +21,7 @@ struct ContentView: View {
                 ScrollView {
                     LazyVStack(pinnedViews: .sectionHeaders) {
                         ForEach(characters, id: \.id) { character in
-                            NavigationLink(destination: CharacterView(character: character)) {
+                            NavigationLink(destination: CharacterDetail(character: character)) {
                                 CellView(character: character)
                             }
                         }

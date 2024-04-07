@@ -9,16 +9,17 @@ import SwiftUI
 
 // MARK: - Detailed view of the character
 
-struct CharacterView: View {
+struct CharacterDetail: View {
     let character: Character
-    
+
     enum Constants {
         static let imageWidth: CGFloat = 240
         static let imaheHeight: CGFloat = 240
+        static let groupPadding: CGFloat = 3
     }
-    
+
     var body: some View {
-        
+
         AsyncImage(url: URL(string: character.image)) { image in
             image
                 .resizable()
@@ -28,15 +29,15 @@ struct CharacterView: View {
         }
         .clipShape(Circle())
         .frame(width: Constants.imageWidth, height: Constants.imaheHeight)
-        
+
         VStack {
             Text(character.name)
                 .font(.title)
                 .fontWeight(.medium)
                 .padding()
-            
+
             Divider()
-            
+
             Group {
                 CharacterInfo(title: "Gender", imageName: "person", info: character.gender)
                 CharacterInfo(title: "Status", imageName: "shield.lefthalf.filled", info: character.status)
@@ -44,15 +45,15 @@ struct CharacterView: View {
                 CharacterInfo(title: "Origin", imageName: "globe.europe.africa", info: character.origin.name)
                 CharacterInfo(title: "Location", imageName: "mappin", info: character.location.name)
             }
-            .padding(3)
+            .padding(Constants.groupPadding)
         }
-        
+
         Spacer()
     }
 }
 
 #Preview {
-    CharacterView(character: Character.testCharacter())
+    CharacterDetail(character: Character.testCharacter())
 }
 
 // MARK: - View with character information to avoid code repetition. Just call it.
@@ -60,10 +61,15 @@ struct CharacterInfo: View {
     let title: String
     let imageName: String
     let info: String
-    
+
+    enum Constants {
+        static let verticalSpacing: CGFloat = 6
+    }
+
     var body: some View {
+
         HStack {
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: Constants.verticalSpacing) {
                 Label(title, systemImage: imageName)
                     .foregroundStyle(.secondary)
                     .font(.headline)
