@@ -10,11 +10,11 @@ import SwiftUI
 // MARK: - Main screen view
 
 struct ContentView: View {
-    
+
     @StateObject var contentViewModel = ViewModel()
-    
+
     var body: some View {
-        
+
         switch contentViewModel.contentState {
         case .content(let characters):
             NavigationStack {
@@ -30,6 +30,7 @@ struct ContentView: View {
                     .navigationTitle("Rick and Morty")
                 }
             }
+            .tint(Color(.label))
         case .loading:
             ProgressView()
                 .progressViewStyle(.circular)
