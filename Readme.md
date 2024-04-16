@@ -1,5 +1,4 @@
 <p align="center">
-<img src="https://i.ibb.co/f0W3shD/Rick-And-Morty.png" width="726">
 </p>
 
 
